@@ -1,0 +1,22 @@
+{
+  "name": "mobilestoremanagement",
+  "version": "1.0.0",
+  "description": "a samile application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Danish",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "git": "^0.1.5",
+    "mongoose": "^5.0.9",
+    "morgan": "^1.9.0",
+    "multer": "^1.3.0"
+  }
+}
+  

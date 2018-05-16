@@ -8,6 +8,8 @@ var samsung = require('../api/samsung.js');
 var qmobile = require('../api/qmobile.js');
 var huawei = require('../api/huawei.js');
 
+var customer = require('../api/customer');
+
 module.exports = function(app){
     app.get('/', function(req,res){
         res.render('index');
@@ -36,6 +38,23 @@ module.exports = function(app){
 
         app.get('/page/huawei',huawei.openhuawei);
         app.get('/page/viewhuawei',huawei.viewhuawei);
+
+
+        app.get('/page/customer',customer.opencustomer);
+        app.get('/page/viewcustomer',customer.viewcustomer);
+
+
+
+
+
+
+
+        app.get('/page/home', function(req,res){
+            res.render('home');
+        });
+
+        
+
 
 
 };

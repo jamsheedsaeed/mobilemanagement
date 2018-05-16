@@ -20,7 +20,7 @@
    
 
    
-      <li ><a href="/secret">Home<span class="sr-only">(current)</span></a></li>
+      <li ><a href="/page/home">Home<span class="sr-only">(current)</span></a></li>
      <li ><a href="/page/htc">HTC<span ></span></a></li>
       <li><a href="/page/oppo">Oppo</a></li>
       
@@ -39,7 +39,7 @@
   <li><a href="/page/viewhtc">HTC</a></li>
    <li><a href="/page/viewsamsung">Samsung</a></li>
 
-
+   <li><a href="/page/viewcustomer">Customers</a></li>
 
       </ul>
     </li>
@@ -159,10 +159,10 @@ input[type=submit]:hover {
     <input type="text" id="brand" name="brand" placeholder="Brand..">
 
     <label for="country">Price</label>
-    <input type="text" id="Price" name="Price" placeholder="Price..">
+    <input type="number" onkeypress="return event.charCode >= 48" min="1" id="Price" name="Price" placeholder="Price..">
 
 
-
+<br>
 
     <label for="subject">Description</label>
     <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
@@ -176,5 +176,51 @@ input[type=submit]:hover {
 
   </form>
 </div>
+
+
+<script language="Javascript" type="text/javascript">
+
+ 
+
+    function onlyAlphabets(e, t) {
+
+        try {
+
+            if (window.event) {
+
+                var charCode = window.event.keyCode;
+
+            }
+
+            else if (e) {
+
+                var charCode = e.which;
+
+            }
+
+            else { return true; }
+
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+
+                return true;
+
+            else
+
+                return false;
+
+        }
+
+        catch (err) {
+
+            alert(err.Description);
+
+        }
+
+    }
+
+
+
+</script>
+
     </body>
     </html>

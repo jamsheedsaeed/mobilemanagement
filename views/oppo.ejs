@@ -149,7 +149,7 @@ body {
     <img src="uploads/download.jpg" alt="Mountain View" height="100px" width="200px" margin=0px>
         <nav class="topnav" id="myTopnav"  role="navigation"  style="padding-left:270px;background-color:#3985B1">
        <ul class="nav navbar-nav">
-      <li ><a href="/secret">Home<span class="sr-only">(current)</span></a></li>
+      <li ><a href="/page/home">Home<span class="sr-only">(current)</span></a></li>
      <li ><a href="/page/htc">HTC<span ></span></a></li>
       <li class="active"><a href="/page/oppo">Oppo</a></li>
       
@@ -339,7 +339,7 @@ body {
    
 
    
-      <li ><a href="/secret">Home<span class="sr-only">(current)</span></a></li>
+      <li ><a href="/page/home">Home<span class="sr-only">(current)</span></a></li>
      <li ><a href="/page/htc">HTC<span ></span></a></li>
       <li class="active"><a href="/page/oppo">Oppo</a></li>
       
@@ -358,6 +358,7 @@ body {
   <li><a href="/page/viewhtc">HTC</a></li>
    <li><a href="/page/viewsamsung">Samsung</a></li>
 
+   <li><a href="/page/viewcustomer">Customers</a></li>
 
 
       </ul>
@@ -475,10 +476,10 @@ input[type=submit]:hover {
     <input type="text" id="title" name="title" placeholder="Title..">
 
     <label for="lname">Brand</label>
-    <input type="text" id="brand" name="brand" placeholder="Brand..">
+    <input type="text" onkeypress="return onlyAlphabets(event,this);" id="brand" name="brand" placeholder="Brand..">
 
     <label for="country">Price</label>
-    <input type="text" id="Price" name="Price" placeholder="Price..">
+    <input type="number" onkeypress="return event.charCode >= 48" min="1"id="Price" name="Price" placeholder="Price..">
 
 
     <!--<select id="country" name="country">
@@ -487,7 +488,7 @@ input[type=submit]:hover {
       <option value="usa">USA</option>
     </select>-->
 
-    <label for="subject">Description</label>
+    <label for="subject" style="margin-right:62%"  >Description</label>
     <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
 
   <input type=file name="userFile"  id="userFile" required="required" style="margin-left:auto;margin-top:auto;margin-bottom:auto;width: 100%;">
@@ -499,5 +500,49 @@ input[type=submit]:hover {
 
   </form>
 </div>
+
+<script language="Javascript" type="text/javascript">
+
+ 
+
+    function onlyAlphabets(e, t) {
+
+        try {
+
+            if (window.event) {
+
+                var charCode = window.event.keyCode;
+
+            }
+
+            else if (e) {
+
+                var charCode = e.which;
+
+            }
+
+            else { return true; }
+
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+
+                return true;
+
+            else
+
+                return false;
+
+        }
+
+        catch (err) {
+
+            alert(err.Description);
+
+        }
+
+    }
+
+
+
+</script>
     </body>
     </html>

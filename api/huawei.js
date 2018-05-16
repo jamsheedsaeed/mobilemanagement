@@ -112,7 +112,7 @@ exports.getAll = function (req, res) {
             res.json(err);
        }
        else{
-        nokia.find({}).then(function(result){
+        huawei.find({}).then(function(result){
             res.render("viewhuawei",{huawei:result});
         })
         // res.json(result);

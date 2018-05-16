@@ -41,6 +41,7 @@
    <li><a href="/page/viewcustomer">Customers</a></li>
 
 
+
       </ul>
     </li>
     <li><a href="/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -174,7 +175,7 @@ h2.headertekst {
   }
 </style>
  
-  <h2 class="headertekst">Data of Oppo Mobile</h2>
+  <h2 class="headertekst">Data of Customers</h2>
   
   
 
@@ -182,24 +183,24 @@ h2.headertekst {
 <table id="data" class="responstable" style="width:80%; margin-left:auto; margin-right:auto;" >
     <thead>      
   <tr>
-    <th width="20%">Title</th>
-    <th width="20%">Brand</th>
-    <th width="15%">Price</th>
-    <th width="40%">Description</th>
+    <th width="20%">Name</th>
+    <th width="20%">Cellno</th>
+    <th width="15%">Addres</Address></th>
+    <th width="40%">Mail</th>
     <th width="5%">Delete</th>
     </tr>
     </thead>
     <tbody>
-    <%console.log(oppo)%>
-    <%for(var i=0;i<oppo.length;i++){%>
+    <%console.log(customer)%>
+    <%for(var i=0;i<customer.length;i++){%>
     
         <tr>
-            <td width="20%"><%=oppo[i].title%></td>
-            <td width="20%"><%=oppo[i].brand%></td>
-            <td width="15%"><%=oppo[i].Price%></td>
-            <td width="40%"><%=oppo[i].description%></td>
+            <td width="20%"><%=customer[i].name%></td>
+            <td width="20%"><%=customer[i].cellno%></td>
+            <td width="15%"><%=customer[i].address%></td>
+            <td width="40%"><%=customer[i].email%></td>
                
-        <td width="5%"><a  href='/api/oppo/delete/<%=oppo[i]._id %>'><button style="background-color:#FF0000;border-radius:4px;">Delete</button></a></td>
+            <td width="5%"><a  href='/api/customer/delete/<%=customer[i]._id %>'><button style="background-color:#FF0000;border-radius:4px;">Delete</button></a></td>
 
     </tr>
       <%}%>

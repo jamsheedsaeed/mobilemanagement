@@ -4,21 +4,21 @@ var app = exprss();
 
 
 
-// exports.openhtc =function(req,res){
-//     res.render("htc");
-// }
+ exports.opencustomer =function(req,res){
+     res.render("customers");
+ }
 
-// exports.viewhtc =function(req,res){
+exports.viewcustomer =function(req,res){
 
-//     htc.find({}).exec(function(err,result){
-//         if(err){
-//             res.status(500).send({error:err});
-//         }
-//         else{
-//             res.render("viewhtc",{htc:result});
-//         }
-//     });
-// }
+    customer.find({}).exec(function(err,result){
+        if(err){
+            res.status(500).send({error:err});
+        }
+        else{
+            res.render("customers",{customer:result});
+        }
+    });
+}
 // const multer = require('multer');
 // const uploads = multer({dest: './uploads'});
 // var storage = multer.diskStorage({
@@ -70,17 +70,17 @@ exports.getAll = function (req, res) {
 }
 
 
-//  exports.delete = function(req, res, next){
-//     htc.remove({_id: req.params.id},function(err, result){
-//          if(err){
-//             res.json(err);
-//        }
-//        else{
-//         htc.find({}).then(function(result){
-//             res.render("viewhtc",{htc:result});
-//         })
-//         // res.json(result);
-//     }
-//     });
-//  }
- 
+exports.delete = function(req, res, next){
+    customer.remove({_id: req.params.id},function(err, result){
+         if(err){
+            res.json(err);
+       }
+       else{
+        customer.find({}).then(function(result){
+            console.log('data is deleted');
+            res.render("customers",{customer:result});
+        })
+        // res.json(result);
+    }
+    });
+ } 

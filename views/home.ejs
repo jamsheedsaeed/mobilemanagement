@@ -20,14 +20,14 @@
    
 
    
-      <li ><a href="/secret">Home<span class="sr-only">(current)</span></a></li>
-     <li class="active"><a href="/page/htc">HTC<span ></span></a></li>
+      <li ><a href="/page/home">Home<span class="sr-only">(current)</span></a></li>
+     <li ><a href="/page/htc">HTC<span ></span></a></li>
       <li><a href="/page/oppo">Oppo</a></li>
       
       <li ><a href="/page/nokia">Nokia</a></li>
       <li><a href="/page/samsung">Samsung</a></li>
       <li><a href="/page/qmobile">Qmobile</a></li>
-      <li><a href="/page/huawei">Huawei</a></li>
+      <li class="active"><a href="/page/huawei">Huawei</a></li>
       
 
     <li class="parent"><a href="#">Data View</a>
@@ -38,8 +38,8 @@
  <li><a href="/page/viewqmobile">Qmobile</a></li> 
   <li><a href="/page/viewhtc">HTC</a></li>
    <li><a href="/page/viewsamsung">Samsung</a></li>
-   <li><a href="/page/viewcustomer">Customers</a></li>
 
+   <li><a href="/page/viewcustomer">Customers</a></li>
 
       </ul>
     </li>
@@ -143,70 +143,38 @@ input[type=submit]:hover {
 
 .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+   
+    padding: 30px;
     max-width: 60%;
-    margin-top: 2%;
+    margin-top: 5%;
+    margin-left: 30%;
 }
 </style>
-<style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-
+<h1 align="center">Welcome to Nawal Customer Service</h1>
+<div class="container">
     
-}
+        <div class="w3-content w3-section" style="max-width:500px">
+                <img class="mySlides" src="http://saleraja.com/images/bestbets/items/mobile-store.jpg" style="width:100%">
+                <img class="mySlides" src="https://www.teleanalysis.com/wp-content/uploads/2015/04/The-Mobile-Store.jpg" style="width:100%">
+                <img class="mySlides" src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period1/2014/02/06/Photos/mobile-store_4C--621x414.jpg" style="width:100%">
+              </div>
+  </div>
 
-h2.headertekst {
-    text-align: center;
-  }
-</style>
- 
-  <h2 class="headertekst">Data of Oppo Mobile</h2>
-  
-  
-
-
-<table id="data" class="responstable" style="width:80%; margin-left:auto; margin-right:auto;" >
-    <thead>      
-  <tr>
-    <th width="20%">Title</th>
-    <th width="20%">Brand</th>
-    <th width="15%">Price</th>
-    <th width="40%">Description</th>
-    <th width="5%">Delete</th>
-    </tr>
-    </thead>
-    <tbody>
-    <%console.log(oppo)%>
-    <%for(var i=0;i<oppo.length;i++){%>
-    
-        <tr>
-            <td width="20%"><%=oppo[i].title%></td>
-            <td width="20%"><%=oppo[i].brand%></td>
-            <td width="15%"><%=oppo[i].Price%></td>
-            <td width="40%"><%=oppo[i].description%></td>
-               
-        <td width="5%"><a  href='/api/oppo/delete/<%=oppo[i]._id %>'><button style="background-color:#FF0000;border-radius:4px;">Delete</button></a></td>
-
-    </tr>
-      <%}%>
-  </tbody>
-</table>
-
-
-
-      </body>
+  <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+               x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+        </script>
+    </body>
     </html>

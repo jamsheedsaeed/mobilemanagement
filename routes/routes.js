@@ -3,6 +3,14 @@ var express = require("express");
 var router = express.Router();
 var app = express();
 
+
+
+var user = require('../api/user.js');
+router.post('/register', user.register);
+router.post('/login', user.login);
+router.get('/user', user.getAll);
+router.delete('/user/:id', user.delete);
+
 var htc = require('../api/htc.js');
 router.post('/htc/add', htc.add);
 // router.post('/login', user.login);
@@ -41,6 +49,7 @@ router.get('/oppo/delete/:id', oppo.delete);
     var customer = require('../api/customer.js');
     router.post('/customer/add',customer.add);
     router.get('/customer',customer.getAll);
+    router.get('/customer/delete/:id', customer.delete);
 
   module.exports = router;
 

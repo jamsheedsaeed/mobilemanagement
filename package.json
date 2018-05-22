@@ -4,9 +4,11 @@
   "description": "a samile application",
   "main": "app.js",
   "scripts": {
-
     "start": "node app.js"
   },
   "author": "Danish",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }

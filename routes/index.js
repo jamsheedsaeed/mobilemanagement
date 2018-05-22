@@ -9,6 +9,7 @@ var qmobile = require('../api/qmobile.js');
 var huawei = require('../api/huawei.js');
 
 var customer = require('../api/customer');
+var supplier = require('../api/supplier');
 
 module.exports = function(app){
     app.get('/', function(req,res){
@@ -42,6 +43,10 @@ module.exports = function(app){
 
         app.get('/page/customer',customer.opencustomer);
         app.get('/page/viewcustomer',customer.viewcustomer);
+
+        
+        app.get('/page/supplier',supplier.opensupplier);
+        app.get('/page/viewsupplier',supplier.viewsupplier);
 
 
 

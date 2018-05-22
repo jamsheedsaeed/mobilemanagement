@@ -1,12 +1,13 @@
 
+
 var mongoose = require('mongoose');
 
 
 var supplier = new mongoose.Schema({
-    name:String,
-    contact:String,
-    address:String,
-    companyname:String
-   
+    name :String,
+    cellno:String,
+    email:String,
+    company:String
+    
 });
-const supplier = module.exports = mongoose.model('supplierdata', supplier);
+const suppliers = module.exports = mongoose.model('supplier', supplier);

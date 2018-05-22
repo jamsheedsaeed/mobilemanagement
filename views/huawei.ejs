@@ -28,7 +28,7 @@
       <li><a href="/page/samsung">Samsung</a></li>
       <li><a href="/page/qmobile">Qmobile</a></li>
       <li class="active"><a href="/page/huawei">Huawei</a></li>
-      
+      <li ><a href="/page/supplier">Supplier</a></li>
 
     <li class="parent"><a href="#">Data View</a>
       <ul class="child">
@@ -40,7 +40,7 @@
    <li><a href="/page/viewsamsung">Samsung</a></li>
 
    <li><a href="/page/viewcustomer">Customers</a></li>
-
+   <li><a href="/page/viewsupplier">Supplier</a></li>
       </ul>
     </li>
     <li><a href="/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -156,7 +156,7 @@ input[type=submit]:hover {
     <input type="text" id="title" name="title" placeholder="Title..">
 
     <label for="lname">Brand</label>
-    <input type="text" id="brand" name="brand" placeholder="Brand..">
+    <input type="text" id="brand" onkeypress="return onlyAlphabets(event,this);"  name="brand" placeholder="Brand..">
 
     <label for="country">Price</label>
     <input type="number" onkeypress="return event.charCode >= 48" min="1" id="Price" name="Price" placeholder="Price..">

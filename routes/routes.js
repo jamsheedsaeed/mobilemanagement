@@ -51,6 +51,14 @@ router.get('/oppo/delete/:id', oppo.delete);
     router.get('/customer',customer.getAll);
     router.get('/customer/delete/:id', customer.delete);
 
+
+    var supplier = require('../api/supplier.js');
+    router.post('/supplier/add',supplier.add);
+    router.get('/supplier',supplier.getAll);
+    router.get('/supplier/delete/:id', supplier.delete);
+
+
+
   module.exports = router;
 
 

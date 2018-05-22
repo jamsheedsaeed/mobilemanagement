@@ -22,15 +22,13 @@
    
       <li ><a href="/page/home">Home<span class="sr-only">(current)</span></a></li>
      <li ><a href="/page/htc">HTC<span ></span></a></li>
-      <li><a href="/page/oppo">Oppo</a></li>
+      <li class="active"><a href="/page/oppo">Oppo</a></li>
       
       <li ><a href="/page/nokia">Nokia</a></li>
       <li><a href="/page/samsung">Samsung</a></li>
       <li><a href="/page/qmobile">Qmobile</a></li>
-      <li class="active"><a href="/page/huawei">Huawei</a></li>
-      <li class="active"><a href="/page/supplier">Supplier</a></li>
-
-      
+      <li><a href="/page/huawei">Huawei</a></li>
+      <li ><a href="/page/supplier">Supplier</a></li>
 
     <li class="parent"><a href="#">Data View</a>
       <ul class="child">
@@ -43,7 +41,6 @@
 
    <li><a href="/page/viewcustomer">Customers</a></li>
    <li><a href="/page/viewsupplier">Supplier</a></li>
-
 
       </ul>
     </li>
@@ -58,6 +55,54 @@
 
   
 </nav>
+
+<script>
+
+    function ValidateEmail(inputText)
+{
+var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+if (reg.test(email.value) == false) 
+{
+alert('Invalid Email Address');
+return false;
+}
+
+return true;
+
+}
+
+</script>
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#name").keypress(function(event){
+            var inputValue = event.which;
+            // allow letters and whitespaces only.
+            if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)) { 
+                event.preventDefault(); 
+                alert('Only Alphabets Are Allowed!');
+            }
+        });
+    });
+    </script>
+
+<script>
+    $(document).ready(function(){
+        $("#company").keypress(function(event){
+            var inputValue = event.which;
+            // allow letters and whitespaces only.
+            if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)) { 
+                event.preventDefault(); 
+                alert('Only Alphabets Are Allowed!');
+            }
+        });
+    });
+    </script>
+
+
 <style>
 
 nav {
@@ -147,38 +192,87 @@ input[type=submit]:hover {
 
 .container {
     border-radius: 5px;
-   
-    padding: 30px;
+    background-color: #f2f2f2;
+    padding: 20px;
     max-width: 60%;
-    margin-top: 5%;
-    margin-left: 30%;
+    margin-top: 2%;
 }
 </style>
-<h1 align="center">Welcome to Nawal Customer Service</h1>
-<div class="container">
-    
-        <div class="w3-content w3-section" style="max-width:500px">
-                <img class="mySlides" src="http://saleraja.com/images/bestbets/items/mobile-store.jpg" style="width:100%">
-                <img class="mySlides" src="https://www.teleanalysis.com/wp-content/uploads/2015/04/The-Mobile-Store.jpg" style="width:100%">
-                <img class="mySlides" src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period1/2014/02/06/Photos/mobile-store_4C--621x414.jpg" style="width:100%">
-              </div>
-  </div>
 
-  <script>
-        var myIndex = 0;
-        carousel();
-        
-        function carousel() {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            for (i = 0; i < x.length; i++) {
-               x[i].style.display = "none";  
+
+<div class="container">
+  <form action="/api/supplier/add" method="POST" >
+  <h2 style="margin-left:30% ">Form of Supplier </h2>
+    <label for="name">Supplier Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter Name..">
+    
+
+    <label for="lname">Cell No</label>
+    <br>
+    <input type="number" min ='0' min=0 oninput="validity.valid||(value='');"  name="cellno" placeholder="Enter Cell Number.." width="40dp">
+    <br>
+
+    <label for="email">Email</label>
+    <input type="text" name="email"  class="form-control is-invalid" id="email" placeholder="Email" aria-describedby="inputGroupPrepend3" onblur="ValidateEmail(this);"  required>
+
+
+
+    <label for="subject" style="margin-right:62%"  >Company Name</label>
+    <input type="text"  id="company" name="company" placeholder="Write company name here">
+
+
+
+    
+    
+
+    <input type="submit" value="Submit">
+
+
+  </form>
+</div>
+
+<script language="Javascript" type="text/javascript">
+
+ 
+
+    function onlyAlphabets(e, t) {
+
+        try {
+
+            if (window.event) {
+
+                var charCode = window.event.keyCode;
+
             }
-            myIndex++;
-            if (myIndex > x.length) {myIndex = 1}    
-            x[myIndex-1].style.display = "block";  
-            setTimeout(carousel, 2000); // Change image every 2 seconds
+
+            else if (e) {
+
+                var charCode = e.which;
+
+            }
+
+            else { return true; }
+
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+
+                return true;
+
+            else
+
+                return false;
+
         }
-        </script>
+
+        catch (err) {
+
+            alert(err.Description);
+
+        }
+
+    }
+
+
+
+</script>
     </body>
     </html>

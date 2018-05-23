@@ -32,11 +32,13 @@ exports.viewcustomer =function(req,res){
 
   exports.add= function(req, res){
     let newCustomer = new customer({
+        phonename: req.body.phonename,
+        price: req.body.price,
         name: req.body.name,
         cellno: req.body.cellno,
         address: req.body.address,
-        email: req.body.email
-        
+        email: req.body.email,
+        date: req.body.date
     });
 
     newCustomer.save((err, customer)=>{
